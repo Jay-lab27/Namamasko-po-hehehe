@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namamasko Po</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="bgmusic.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="snowflakes" aria-hidden="true">
+        <!-- Snowflakes will be added dynamically here -->
+    </div>
+    <div class="container">
+        <p class="head">🎄Merry Christmas!🎄</p>
+        <p class="par1">😊Namamasko po!😊 <br> Click me!🎤</p>
+    
+        <div class="person">
+            <img id="sing" src="Pic1.jpg" alt="Person" class="person-img" onclick="toggleSound()"> 
+            <div class="qr-code">
+                <img src="Pic2.jpg" alt="QR Code">
+            </div>
+        </div>
+
+        <p class="par">
+            👨‍💻Scan the Gcash QR or download it using the button below👨‍💻 <br>
+            😍Maraming Salamat po!😍
+        </p>
+        <button id="download">Download QR Code</button>
+    </div>
+
+    <script src="ja.js"></script>
+    <script src="snow.js"></script> 
+    <script>
+        var audio = new Audio('sound2.mp3'); 
+        var isPlaying = false; 
+
+        function toggleSound() {
+            if (isPlaying) {
+                audio.pause(); 
+                audio.currentTime = 0; 
+            } else {
+                audio.play(); 
+            }
+            isPlaying = !isPlaying; 
+        }
+
+        // Fixing the download functionality
+        document.getElementById('download').addEventListener('click', function () {
+            const link = document.createElement('a');
+            link.href = 'Pic3.jpg'; // Update this to the correct path to your QR code image
+            link.download = 'QR_Code.jpg';
+            document.body.appendChild(link); // Add the link to the DOM
+            link.click(); // Trigger the download
+            document.body.removeChild(link); // Clean up after the download
+        });
+
+        function playMerryChristmas() {
+            var audio = new Audio('sound1.mp3'); // Replace with your sound file
+            audio.play();
+        }
+    </script>
+</body>
+</html>

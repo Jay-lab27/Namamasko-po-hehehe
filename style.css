@@ -1,0 +1,248 @@
+/* Add keyframes for the fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #020101, #000000);
+    margin: 0;
+    padding: 2rem;
+    background-image: url('Pic1.jpg'); /* Add a festive background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #444;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.container {
+    margin-top: 30px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    max-width: 800px;
+    width: 90%;
+    animation: bounceIn 1.5s ease-in-out;
+    animation: fadeIn 2s ease-in-out, scaleUp 1s ease-out 2s, glow 1.5s infinite alternate, bounce 2s ease-in-out infinite; /* Smooth bounce */
+}
+
+/* Snowflakes Styling */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+/* Slower Falling Snow */
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.snowflake {
+    /* Adjust the duration for slower snowflakes */
+    animation-duration: 1s; /* Slower than before */
+}
+
+
+
+
+/* Existing styles remain unchanged */
+.person {
+    padding-top: 1rem;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 2s ease-in-out, scaleUp 1s ease-out 2s, glow 1.5s infinite alternate, bounce 2s ease-in-out infinite; /* Smooth bounce */
+    
+}
+
+.person:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.person-img {
+
+    width: 220px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.person-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.qr-code {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.qr-code img {
+    width: 110px;
+    height: 110px;
+    transition: transform 0.3s, filter 0.3s;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.qr-code img:hover {
+    transform: rotate(5deg) scale(1.1);
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.2));
+}
+
+.head {
+    font-size: 28px;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 1px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 25px #ff0000, 0 0 5px #ff0000;
+    padding: 10px;
+    border-radius: 8px;
+    animation: fadeIn 2s ease-in-out, scaleUp 1s ease-out 2s, glow 1.5s infinite alternate, bounce 2s ease-in-out infinite; /* Smooth bounce */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale-up animation */
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Glowing effect */
+@keyframes glow {
+    0% {
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 25px #ff0000, 0 0 5px #ff0000;
+    }
+    100% {
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), 0 0 30px #ff6347, 0 0 10px #ff6347;
+    }
+}
+
+/* Smooth Bounce animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-8px); /* Smaller upward movement */
+    }
+    50% {
+        transform: translateY(0); /* Return to original position */
+    }
+    70% {
+        transform: translateY(-4px); /* Slight upward movement */
+    }
+    100% {
+        transform: translateY(0); /* End at the original position */
+    }
+}
+
+/* Hover effect */
+.head:hover {
+    color: #ffdf00;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5), 0 0 25px #ffdf00, 0 0 5px #ffdf00;
+    transform: scale(1.1);
+}
+
+
+.par {
+
+    padding-top: 4rem;
+    font-size: 12px;
+    color: #ffffff;
+    line-height: 1.6;
+   
+    animation: fadeIn 2s ease-in-out, scaleUp 1s ease-out 2s, glow 1.5s infinite alternate, bounce 2s ease-in-out infinite; /* Smooth bounce */
+}
+
+.par1 {
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-in-out;
+    margin: 0.2rem;
+    animation: fadeIn 2s ease-in-out, scaleUp 1s ease-out 2s, glow 1.5s infinite alternate, bounce 2s ease-in-out infinite; /* Smooth bounce */
+}
+
+
+.par2 {
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 1.6;
+    padding: 0 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#download {
+    padding: 12px 25px;
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(to right, #ff7b7b, #ff3d3d);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    animation: fadeIn 2s ease-in-out, scaleUp 1s ease-out 2s, glow 1.5s infinite alternate, bounce 2s ease-in-out infinite; /* Smooth bounce */
+}
+
+
+#download:hover {
+    background: linear-gradient(to right, #ff6161, #ff2020);
+    box-shadow: 0 4px 15px rgba(255, 60, 60, 0.5);
+}
